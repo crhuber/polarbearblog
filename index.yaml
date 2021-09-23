@@ -3,6 +3,16 @@ entries:
   polarbearblog:
   - apiVersion: v2
     appVersion: 0.1.0
+    created: "2021-09-23T15:10:03.90387+02:00"
+    description: A Helm chart for Kubernetes
+    digest: caed2db285b107b9e86c5097daf3f24882a766eade2156ff1032e2ecba42ae0a
+    name: polarbearblog
+    type: application
+    urls:
+    - https://github.com/crhuber/polarbearblog/releases/download/polarbearblog-0.1.2/polarbearblog-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: 0.1.0
     created: "2021-09-22T17:09:31.152941+02:00"
     description: A Helm chart for Kubernetes
     digest: 7f4dfe207dec675e69c63e58da687550029acdeb83e90034e6fcd597ac97b9ed
@@ -11,4 +21,4 @@ entries:
     urls:
     - https://github.com/crhuber/polarbearblog/releases/download/polarbearblog-0.1.1/polarbearblog-0.1.1.tgz
     version: 0.1.1
-generated: "2021-09-22T17:09:31.152948+02:00"
+generated: "2021-09-23T15:10:03.90389+02:00"
