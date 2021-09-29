@@ -88,6 +88,3 @@ env:
   PBB_AWS_REGION: "us-west-2"
   PBB_CLOUD_STORAGE: "aws"
 
-secrets:
-  PBB_SESSION_KEY: ""
-  PBB_PASSWORD_HASH: ""
