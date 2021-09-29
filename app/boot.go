@@ -53,11 +53,6 @@ func Boot() (http.Handler, error) {
 		return nil, fmt.Errorf("environment variable not able to parse as bool: %v", "PBB_ALLOW_HTML")
 	}
 
-	cloudStorage := os.Getenv("PBB_CLOUD_STORAGE")
-	if len(cloudStorage) == 0 {
-		return nil, fmt.Errorf("environment variable missing: %v", "PBB_CLOUD_STORAGE")
-	}
-
 	// Create new store object with the defaults.
 	site := &model.Site{}
 
@@ -65,6 +60,10 @@ func Boot() (http.Handler, error) {
 	var ss websession.Sessionstorer
 
 	if !envdetect.RunningLocalDev() {
+		cloudStorage := os.Getenv("PBB_CLOUD_STORAGE")
+		if len(cloudStorage) == 0 {
+			return nil, fmt.Errorf("environment variable missing: %v", "PBB_CLOUD_STORAGE")
+		}
 		switch cloudStorage {
 		case "aws":
 			// Use AWS S3 when running in AWS.
