@@ -20,7 +20,6 @@ func registerPost(c *Post) {
 }
 
 func (c *Post) index(w http.ResponseWriter, r *http.Request) (status int, err error) {
-	r.Header.Set("Content-Type", "text/html; charset=utf-8")
 	vars := make(map[string]interface{})
 	vars["tags"] = c.Storage.Site.Tags(true)
 
@@ -54,7 +53,6 @@ func (c *Post) index(w http.ResponseWriter, r *http.Request) (status int, err er
 }
 
 func (c *Post) show(w http.ResponseWriter, r *http.Request) (status int, err error) {
-	r.Header.Set("Content-Type", "text/html; charset=utf-8")
 	slug := way.Param(r.Context(), "slug")
 	p := c.Storage.Site.PostBySlug(slug)
 

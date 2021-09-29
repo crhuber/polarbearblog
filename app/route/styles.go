@@ -15,7 +15,6 @@ func registerStyles(c *Styles) {
 }
 
 func (c *Styles) edit(w http.ResponseWriter, r *http.Request) (status int, err error) {
-	r.Header.Set("Content-Type", "text/html; charset=utf-8")
 	vars := make(map[string]interface{})
 	vars["title"] = "Site styles"
 	vars["token"] = c.Sess.SetCSRF(r)
@@ -29,7 +28,6 @@ func (c *Styles) edit(w http.ResponseWriter, r *http.Request) (status int, err e
 }
 
 func (c *Styles) update(w http.ResponseWriter, r *http.Request) (status int, err error) {
-	r.Header.Set("Content-Type", "text/html; charset=utf-8")
 	r.ParseForm()
 
 	// CSRF protection.

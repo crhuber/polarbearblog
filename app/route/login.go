@@ -27,7 +27,6 @@ func registerAuthUtil(c *AuthUtil) {
 
 // login allows a user to login to the dashboard.
 func (c *AuthUtil) login(w http.ResponseWriter, r *http.Request) (status int, err error) {
-	r.Header.Set("Content-Type", "text/html; charset=utf-8")
 	slug := way.Param(r.Context(), "slug")
 	if slug != c.Storage.Site.LoginURL {
 		return http.StatusNotFound, nil
@@ -36,12 +35,10 @@ func (c *AuthUtil) login(w http.ResponseWriter, r *http.Request) (status int, er
 	vars := make(map[string]interface{})
 	vars["title"] = "Login"
 	vars["token"] = c.Sess.SetCSRF(r)
-
 	return c.Render.Template(w, r, "base", "login", vars)
 }
 
 func (c *AuthUtil) loginPost(w http.ResponseWriter, r *http.Request) (status int, err error) {
-	r.Header.Set("Content-Type", "text/html; charset=utf-8")
 	slug := way.Param(r.Context(), "slug")
 	if slug != c.Storage.Site.LoginURL {
 		return http.StatusNotFound, nil
@@ -126,7 +123,6 @@ func (c *AuthUtil) loginPost(w http.ResponseWriter, r *http.Request) (status int
 }
 
 func (c *AuthUtil) logout(w http.ResponseWriter, r *http.Request) (status int, err error) {
-	r.Header.Set("Content-Type", "text/html; charset=utf-8")
 	c.Sess.Logout(r)
 
 	http.Redirect(w, r, "/", http.StatusFound)
