@@ -42,7 +42,6 @@ func (c *AdminPost) create(w http.ResponseWriter, r *http.Request) (status int, 
 }
 
 func (c *AdminPost) store(w http.ResponseWriter, r *http.Request) (status int, err error) {
-	r.Header.Set("Content-Type", "text/html; charset=utf-8")
 	ID, err := uuid.Generate()
 	if err != nil {
 		return http.StatusInternalServerError, err
