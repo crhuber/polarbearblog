@@ -2,7 +2,7 @@
 on: [pull_request]
 # Name of the workflow. If this is blank, it will default to the path of the
 # file.
-name: Unit Tests
+name: unit-tests
 jobs:
   # Name of the job.
   unit-tests:
