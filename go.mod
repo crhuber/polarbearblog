@@ -15,6 +15,6 @@ require (
 	github.com/russross/blackfriday/v2 v2.1.0
 	github.com/ssor/bom v0.0.0-20170718123548-6386211fdfcf // indirect
 	github.com/stretchr/testify v1.7.0
-	golang.org/x/crypto v0.0.0-20200622213623-75b288015ac9
+	golang.org/x/crypto v0.1.0
 	jaytaylor.com/html2text v0.0.0-20200412013138-3577fbdbcff7
 )
